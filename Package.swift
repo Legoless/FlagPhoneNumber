@@ -34,12 +34,12 @@ let package = Package(
             name: "FlagPhoneNumber",
             dependencies: ["libPhoneNumber"],
             path: "Sources",
+            exclude: ["Info.plist", "libPhoneNumber"],
             sources: [
                 "FPNCountryPicker",
                 "Helpers",
                 "*.swift"
             ],
-            exclude: ["Info.plist", "libPhoneNumber"],
             resources: [.process("Resources")],
             publicHeadersPath: "."
         ),
