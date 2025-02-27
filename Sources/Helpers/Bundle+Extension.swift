@@ -6,20 +6,24 @@
 //
 
 import Foundation
+private class BundleFinder {}
+
+extension Bundle {
+    static var current: Bundle {
+        #if SWIFT_PACKAGE
+        return .module
+        #else
+        return Bundle(for: BundleFinder.self)
+        #endif
+    }
+}
+
 
 public extension Bundle {
 
 	@objc static var FlagIcons = FlagPhoneNumber()
 
 	@objc static func FlagPhoneNumber() -> Bundle {
-		return Bundle.module
-		
-		//let bundle = Bundle(for: FPNTextField.self)
-
-		//if let path = bundle.path(forResource: "FlagPhoneNumber", ofType: "bundle") {
-		//	return Bundle(path: path)!
-		//} else {
-		//	return bundle
-		//}
+		return current
 	}
 }
