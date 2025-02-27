@@ -33,8 +33,8 @@ let package = Package(
         .target(
             name: "FlagPhoneNumber",
             dependencies: ["libPhoneNumber"],
-            path: "Sources",
-            exclude: ["Info.plist", "libPhoneNumber", "Resources"],
+            path: "Sources/FlagPhoneNumber",
+            exclude: ["Info.plist", "Resources"],
             sources: [
                 "FPNCountryPicker",
                 "Helpers",
