@@ -34,8 +34,8 @@ let package = Package(
             name: "FlagPhoneNumber",
             dependencies: ["libPhoneNumber"],
             path: "Sources",
-            resources: [.process("Sources/Resources")],
             exclude: ["Info.plist", "libPhoneNumber", "Resources"],
+            resources: [.process("Resources")],
             publicHeadersPath: "."
         ),
     ]
